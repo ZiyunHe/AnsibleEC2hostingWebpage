@@ -1,0 +1,11 @@
+---
+- hosts: ec2                                               
+  sudo:  yes
+  tasks:
+      - name: Install apache2
+        raw: sudo apt-get -y install apache2
+      - name: Start Apache
+        raw: sudo service apache2 restart
+      - name: run Hello World webpage
+        copy: src=/Users/ziyun/Desktop/index.html dest=/var/www/html/index.html
+
